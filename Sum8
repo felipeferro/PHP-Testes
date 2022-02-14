@@ -1,0 +1,24 @@
+<?php
+$count = 999;
+echo "<table> <tr><td>";
+while ($count < 4500) {
+    
+    $arr = str_split($count);
+    $sum_arr =  array_sum($arr);
+    
+    while ($sum_arr > 9) {
+        $arr2 = str_split($sum_arr);
+        $sum_arr =  array_sum($arr2);
+    }
+
+    if ($sum_arr == 8){
+        $duplicado = array_unique($arr);
+        if ($arr == $duplicado) 
+            echo  $count . "</td></tr><tr><td>";
+        else
+            echo "<strong style='color: red;'>" . $count . "</strong></td></tr><tr><td>";
+    }
+    ++$count;
+}
+    echo "The End";
+?>
